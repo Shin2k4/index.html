@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    
+<body>
+    <!-- <script>
+        /*
+            1. Biến:
+                cách khai báo biến:
+                3 cách:
+                    let   (hiện tại sử dụng nhiều "phạm vi blockscope{...}")
+                    const (phạm vi: )
+                    var
+            2. Kiểu dữ liệu:
+            3. Toán tử
+                + Toán tử số học: +,-,*,/,**
+                + Toán tử gán =,+=,*=,/=,%=
+                + Toán tử so sánh ==,===,!=,!==,<,>,<=,>=
+                + Toán tử logic: ||,&& (có "truthy" thì lấy còn falsy thì ko )
+                + Toán tử tăng giảm i++,++i
+                + Toán tử 3 ngôi (toán tử 3 vế)
+                    vd:
+                        a>3?a=9:a=10;
+                    
+            4. Quy tắc đặt tên biến: camel case(quy tắc con lạc đà)
+         */
+    </script>  -->  
+     <script>
+        /*
+            bài 1:
+                bước 1:đọc hiểu đề, phân tích 
+                bước 2:
+                    input: nhập điểm 3 môn: sinh, lý, hoá
+                    output: tổng điểm 3 môn, điểm trung bình
+
+         */
+
+         /* let diemLy=+prompt("mời bạn nhập điểm môn lý");
+         let diemHoa=+prompt("mời bạn nhập điểm môn hoá");
+         let diemSinh=Number(prompt("mời bạn nhập điểm môn sinh"));
+         let tongDiem=diemLy+diemHoa+diemSinh;
+         let diemTrungBinh=tongDiem/3;
+         console.log("điểm trung bình", diemTrungBinh);
+         console.log(` điểm trung bình là: ${diemTrungBinh}`);(truyền tên biến)
+         document.write(`điểm trung bình của 3 môn Lý Hoá Sinh là ${diemTrungBinh}`);
+         */
+        /* 
+            Điều kiện và vòng lặp:
+                Điều kiện:
+                    1. điều kiện đơn giản IF-ELSE (nếu-còn lại);
+                    let a=7;
+                        //(condittion)
+                    if(a>5){
+                        console.log("a lớn hơn 5")-(logic hoặc xử lý điều gì đấy)
+                        nếu điều kiện đúng thì thân chạy ko thì chạy vào else
+
+                    }else{
+                        //logic hoặc xử lý j đấy
+                        console.log("a nhỏ hơn 5");
+                    }
+                    vd:
+                    let Number=+prompt("mời bạn nhập 1 số");
+                        if(Number%2==0){
+                            console.log("là số chẵn");           
+                        }else{
+                            console.log("là số lẻ");
+                        }
+                    2.if-else bậc thang.
+                    3.if-else lồng
+                        vd:
+                            let a=9;
+                            if(a>5){
+                                // thân chạy
+                               if(a>10){
+                                    // điều kiện thân chạy
+                            }else{
+                                    // điều kiện trên sai thì chạy
+                            }
+                            }else{
+                            }
+                    4.swith-case:  
+                            break: dùng để thoát khỏi case.
+                            vd:
+                         let day=+prompt("mời bạn nhập ngày trong tuần!");
+                            switch(key){
+                                case 2: // so sánh nghiêm ngặt === hoặc ko nghiêm ngặt ==
+                                case 4:
+                                case 6:
+                                    console.log("ngày đi học");
+                                    break;
+                                case 3:
+                                case 5:
+                                case 7:
+                                    console.log("ngày đi học");
+                                    break;
+                                default:
+                                console.log("ngày bạn nhập ko có trong tuần");
+                                    break;
+                            }
+                Vòng Lặp:
+                    for, while, do while;
+                    * FOR
+                        for: thường
+                        +thường gồm 3 phần:
+                            P1: giá trị khởi tạo
+                            P2: điều kiện
+                            P3: bước nhảy
+                               các phận ngăn cách với nhau = dấu phẩy.
+                        *bắt đầu từ giá trị khởi tạo so sánh với điều kiện, điều kiện đúng thì chạy hết thân sau đó tới bước nhảy r ktra tiếp điều kiện sai thì nghỉ code*
+                         *code js auto chạy từ trên xuống dưới*
+                         BREAK: dùng để thoát khỏi vòng lặp (cha chứa nó gần nhất.)\
+                         continue: dùng để bỏ qua vòng lặp
+                         for lồng:
+                          vd:   
+                            for(let i=0;i<5;i++) {
+                                //thân for
+                                for (let j = 1; j < 3 ; j++){
+                                    if(i==4){
+                                    continue;
+                                    console.log(i);
+                                    }
+                                }                               
+                            }
+                    while (điều kiện đúng thì thân chạy; điều kiện sai thì tắt máy);
+                          ("điều kiện đúng chạy hết thân sau đó quay về kiểm tra điều kiện, nếu điều kiện sai mới dừng") 
+                          *!CHÚ Ý!!! PHẢI CÓ ĐIỂM DỪNG NẾU KO SẼ BỊ VÒNG LẶP VÔ TẬN!*
+                          (có thể chạy hoặc ko chạy)
+                       do-while: chạy ít nhất 1 lần.
+            %: là chia hết cho dư                        
+         */
+        // let numberCheck=+prompt("mời nhập số dương!")
+        // while(numberCheck<0){
+
+        //     numberCheck=+prompt("mời nhập số dương");
+
+        // }
+        //  Thứ tư, 10/5/2023
+         /* Array là 1 loại biến đặc biệt trong JS được dùng để lưu trữ dữ liệu
+            Cách khai báo mảng trong JS:
+            let->tên mảng->=[...]
+            Tên mảng đặt theo quy tắc camel-case, theo ý nghĩa cụ thể;
+            ví dụ:
+                 mảng danh sách sản phẩm: let listProducts=[...];
+            Trong mảng có thể chứa mọi loại kiểu dữ liệu;
+            Các phần tử trong mảng ngăn cách bởi dấu ",";
+            Để ktra số phần tử trong mảng thì dùng phương thức".length";
+            vd:
+                Khai báo 1 mảng danh sách học viên HCM!
+                let listStudents=["duy","shin","báo"];
+                console.log("số phần tử trong mảng là",listStudents.length);
+            Chỉ mục index trong mảng mới được bắt đầu từ 0;
+            CRUD với mảng và các phương thức hay làm việc với mảng;
+            C: Create ( thêm mới phần tử trong mảng );
+                + push()            : thêm phần tử vào cuối mảng;
+                + unshift()         : thêm phần tử vào đầu mảng;
+                + splice()          : xoá hoặc thêm phần tử vào trong mảng;
+            R: Read   ( đọc các phần tử trong mảng );
+                + dùng hàm for() để đọc các phần tử ra;
+                    + for-in        : sẽ in ra chỉ mục index;
+                    + for-of        : in ra giá trị phần tử trong mảng;
+            U: Update ( Chỉnh sửa giá trị trong mảng );
+                + splice()          : xoá cái cũ thêm cái mới vào mảng.( tác động trực tiếp vào mã ban đầu);
+            D: Delete ( Xoá phần tử trong mảng );
+                + pop()             : xoá phần tử cuối cùng trong mảng và in ra giá trị đó;
+                + shift()           : xoá phần tử đầu tiên trong mảng và in ra giá trị đó;
+            Kiểm tra kiểu dữ liệu của mảng.
+                + console.log(typeof(null));
+                + console.log(Array.isArray(null));
+            Các phương thức làm việc với mảng;
+                1.indexOf():
+                 + ktra phần tử có trong mảng hay ko;
+                 + nếu có thì trả về vtri, ko có trả về -1;
+                2.includes:
+                 + ktra phần tử có trong mảng hay ko;
+                 + nếu có trả về true, ko có trả về false;
+                3.Slice:
+                 + sao chép, cắt sang 1 mảng mới;
+                4.Split()           : cắt chuỗi thành mảng;
+                5.Revecer()         : dùng để đảo ngược mảng;
+                6.Join()            : dùng để nối các phần tử trong mảng thành chuỗi;
+                7.Sort()            : dùng để sắp xếp các phần tử trong mảng theo bảng ASCII("Ko xét số âm");
+                8.charAT()          : lấy phần tử trong chuỗi ký tự;
+                9.toUpperCase()     : dùng để chuyển từ chữ thường lên chữ hoa;
+                10. toLowerCase()   : dùng để chuyển từ chữ hoa thành chữ thường;
+                11.fill()           : ghi đè lên phần tử muốn ghi đè;
+                12.coppyWhithin     : cắt mảng;
+                13.Mảng là kiểu dữ liệu tham chiếu.
+                    + tham trị là kiểu dữ liệu nguyên thuỷ: lưu ở stack (bộ nhỡ tĩnh)
+                    + tham chiếu là array, function, object: lưu ở HEAP (bộ nhớ động)
+                14.BTVN: đọc thêm các phương thức làm việc với mảng:
+                + map       :   duyệt qua các phần tử trong mảng (ko thay đổi): trả về đúng = số phần tử trong mảng
+                                vd:
+                                    let listNumber = [5,8,9,6,4,5]
+                                    let result=listNumber.map((value,index,arrOld)=>{
+                                        return value>5;
+                                    })
+                                    console.log(result);
+                                    console.log(listNumber);
+
+                + filter   :  duyệt qua tất cả phần tử trong mảng 
+                                2 phương thức làm việc với mảng (lọc số phần tử)
+                                *LƯU Ý: cả filter và map đều cho ra 1 mảng mới 
+                                vd:
+                                    let listNumber = [5,8,9,6,4,5]
+                                    let result=listNumber.filter((value,index,arrOld)=>{
+                                        console.log("VALUE",value);
+                                        console.log("INDEX",index);
+                                        console.log("ARROLD",arrOld);
+
+                                    })
+
+                    + forEach   : là một phương thức lặp qua tất cả phần tử trong mảng một cách hiệu quả.
+                    
+                    + reduce    :  thực thi một hàm lên các phần tử của mảng (từ trái sang phải) 
+                                với một biến tích lũy để thu về một giá trị duy nhất.
+                    + some      :   lặp qua tất cả các phần tử của mảng, mỗi lần lặp nó sẽ truyền giá trị 
+                                của phần tử đang lặp vào hàm callback
+                    + findIndex : sẽ trả về key của phần tử đầu tiên trong mảng thỏa mãn được điều kiện kiểm tra
+                                (được truyền vào như một hàm).
+                    + find      :  lấy giá trị của phần tử đầu tiên trong Mảng đáp ứng điều kiện được cung cấp.
+                    + every     : giúp kiểm tra tất cả các phần tử trong mảng có thõa mãn một điều kiện nào đó hay không.
+                15. Contructor Set làm việc với mảng:
+                    - loại bỏ các phần tử trùng nhau trong mảng
+                    BTVN:
+                        + sắp xếp các phần tử trong mảng các số theo chiều tăng dần.
+                        + xoá các phần tử trùng nhau trong mảng 
+                        + cho người dùng nhập vào 1 chuỗi ktra xem chuỗi đó có phải chuỗi dối xứng hay ko
+                        + học CRUD trong mảng(thêm, sửa , xoá với mảng!)
+         */      
+        
+            // chuyển đổi kí tự đầu của mỗi từ thành chữ IN Hoa
+            // BTVN: Cho người dùng nhập 1 chuỗi:
+            //          + nếu gặp chữ thường thường thì cho lên chữ hoa
+            //          + nếu gặp chữ hoa thì cho xuống chữ thường
+            // VD:
+            //  INPUT: Well CoME RIkkEi aCademy
+            //  OUTPUT: wELL cOme riKKeI AcADEMY
+        // let listNumbers = [1,4,5,8,0];
+        // console.log(listNumbers.fill(9));
+
+
+
+      /*  12/5/2023
+            FUNCTION: hàm
+          - là một tập hợp các khối mã lệnh
+            thực thi nhiệm vụ nhất định
+            viết 1 lần và dùng nhiều lần.
+            (khả năng tái sử dụng)
+        *Các loại FUNCTION hay dùng
+        
+        1. DECLERATION
+        + cách khai báo;   (đặt tên theo chức năng của hàm và theo quy tắc camel-case)
+        + cách thực thi;   (để hàm được thực thi thì phải gọi hàm call())
+        + 1 số lưu ý khi dùng hàm.  
+            - cách khai báo :   sử dụng đặt tên theo quy tắc camel-case;
+            - phải gọi hàm (có thể gọi trước hoặc sau khi khai báo);
+                vd:
+                    function tinhTong() {
+                       // viết logic thực thi các khối mã lệnh
+                        let a = 5;
+                        let b = 7;
+                        console.log("tổng của 2 số a và b là :", a+b);
+                    } 
+                    tinhTong(); (lời gọi hàm)                  
+        2. Expression Function:
+                vd: 
+                    let result= function () {
+                        let a = 5;
+                        let b = 6;
+                        console.log("tổng của 2 số a và b là:", a + b);
+                    }
+                    result(); (lời gọi hàm)
+        * 1 số lưu ý: 
+                    + đối với loại function này thì mình có thể đặt tên hoặc là ko;
+                    + nhưng mình nên đặt tên cho nó ;
+                    + phải gọi sau khi khai báo;
+        3. Arrow Function ( hàm mũi tên ):
+                vd: 
+                    let result=() => {
+                        console.log("xin chào học viên RA hcm!")
+                    }
+                    result(); (lời gọi hàm)
+        * 1 số lưu ý: 
+                    + đối với arrow function phải gọi hàm sau khi khai báo;
+                    + và nó ko có CONTEXT- từ khoá this khi làm việc với arrow function.
+        4. IIFE (Immediately invoke function expression - hàm tự gọi chính nó)
+                vd:
+                    (function(){
+                        console.log("xin chào1");
+                    })();            
+                    (function sayHello(){
+                        console.log("xin chào2");
+                    })();
+                    (function sayHello(){
+                        console.log("xin chào3");
+                    })
+        * 1 số lưu ý:
+                    + hàm được sử dụng để tạo thư viện.
+        5. RETURN trong hàm: ( kết quả trả về của hàm )
+         + hàm khi gặp return sẽ dừng chương trình;
+         + không được viết logic sử lý sau câu lệnh return;
+         + 
+                vd:
+                    function showInfor(){
+                        let firstName="Duy";
+                        let lastName="Nguyễn Thành";
+                        fullName=firstName+lastName;
+                        return fullName;
+                    }
+         + return là tham số và đối số
+                    - Tham Số : parameter;
+                    - Đối Số  : arguments;
+                        !note: BIẾN KHI KHAI BÁO KHÔNG CÓ TỪ KHOÁ ( var, let, const)
+                vd:
+                    function showInfor(firstName,lastName) {
+                        let fullName= firsName+lastName;
+                        console.log("xin chao!",fullName)
+                    }   
+                    showInfor("Duy","Nguyen Thanh")
+                vd2:
+                    function showInfor(arg) {
+                        console.log(arg);
+                    }
+                    showInfor([4,5,6])
+        6.CLOSURES: tính bao đóng
+                vd:
+                    function tinhTong(){
+                        let a=7;
+                        function showResult(){
+                            console.log(a);
+                        }
+                        showResult()
+                    }
+                    tinhTong();
+         + Cho phép lồng các function trong nhau
+         + Các function con được định nghĩa bên trong function cha
+            chứa nó
+         + Function con truy cập được các biến của function cha
+         + Function cha không thể truy cập biến của function con
+        CALL BACK: 
+            + Hàm được truyền làm đối số của hàm khác;
+            !NOTE: việc sử dụng callback nên tránh callback-hell!
+            BTVN: + về nhà tìm hiểu promise và asyn-await
+
+                vd:
+                    let sdt;
+                    function xinSoDt(){
+                        console.log("")
+                    }
+                vd2:
+                    // console.log(result());
+                    // function tinhTong(start,end) {
+                    //     let result = 0;
+                    //     for (let i = start; i <= end; i++) {
+                    //         result +=i 
+                    //     }
+                    //     console.log(`kết quả từ ${start} đến ${end} là ${result}`);
+                    // }
+// tinhTong(1-25);
+            Bài 1: viết hàm kiểm tra số nguyên tố cho người dùng nhập vào 1 số bất kì ktra xem số đó
+                có phải số nguyên tố không?
+            Bài 2: viết chương trình cho người dùng nhập vào 1 số nguyên tố n sau đó in ra những số
+                nguyên tố nhỏ hơn n.
+                *PHÂN TÍCH BÀI*
+                    B1: viết 1 hàm ktra số nguyên tố
+                    B2: mình sẽ duyệt vòng lặp 1 đến n
+            Bài 3: viết 1 chương trình cho phép người dùng nhập vào 1 số nếu ko phải số nguyên dương  
+                yêu cầu nhập lại in ra số chăn số lẻ
+            Bài 4: viết chương trình nhập vào 1 số ktra xem số đó có phải là số hoàn hảo hay không
+                ( số hoàn hảo là số có tổng các ước số bằng chính nó )
+                vd: input: 6
+                    output: là số hoàn hảo
+                    input: 7
+                    output: không là số hoàn hảo.
+                        // Bài 2:   
+                            //   let a = +prompt("mời bạn nhập 1 số");
+                            //      ++a;
+                            //      console.log(a); -> (đang thiếu)
+
+                            // let number = +prompt("mời bạn nhập 1 số nguyên dương");
+                            // console.log(Number.isInteger(numberCheck));
+
+
+
+                            // function isPerfectNumber(number) {
+                            //         if (number <= 1) {
+                            //                 return false; 
+                            //         }
+                            //         let sum = 0;
+                            //         for (let i = 1; i < number; i++) {
+                            //                 if (number % i === 0) {
+                            //                         sum += i;
+                            //                 }
+                            //         }
+                            //         return sum === number;
+                            // }
+                            // let number = parseInt(prompt("Nhập số cần kiểm tra:"));
+                            // if (isPerfectNumber(number)) {
+                            //         console.log(number + " là số hoàn hảo.");
+                            // } else {
+                            //         console.log(number + " không là số hoàn hảo.");
+                            // }
+
+                            // bài chữa : 
+                            // let n = +prompt("mời nhập số cần kiểm tra!")
+                            // function checkPerfectNumber() { //number là tham số nhận về
+                            //         let total = 0;  //total = sum
+                            //         for (let i=1;i<number;i++){
+                            //                 if (number%i==0){
+                            //                         total+=i;
+                            //                 }
+                            //         }
+                            //         if(total==number){
+                            //                 return true;
+                            //         }else{
+                            //                 return false;
+                            //         }
+                            // }
+                            // let result =checkPerfectNumber(n);
+                            // if(result){
+                            //         console.log("là số hoàn hảo!");
+                            // } else{
+                            //         console.log("không phải số hoàn hảo!");
+                            // }
+
+
+            * 15/5/2023:
+             OBJECT: Đối Tượng
+            Gồm:
+                + thuộc tính : property
+                + phương thức: method
+                Cách khai báo đối tượng:
+                CRUD đối với oject
+                C: CREATE thêm mới thuộc tính
+                    + nếu trong đối tượng mà có 2 property trùng nhau thì thuộc tính sau sẽ ghi đè lên thuộc tính trước
+                    + đối tượng.thuộc tính
+                R: REAT (đọc)
+                    + C1: dùng for-in để đọc
+                    + C2: dùng object.keys(tên đối tượng)=> 1 mảng gồm các key;
+                U: UPDATE 
+                    + Thay đổi giá trị của 1 thuộc tính trong đối tượng.
+                    + Đối tượng.thuộc tính
+                D: DELETE
+                    + delete person.thuộctính
+                    + 2 cách ktra 'keys' có tồn tại trong object hay ko
+                        -console.log("name"in object)
+                        -console.log()
+                        
+                * Quy tắc đặt tên 'keys' theo quy tắc camel-case
+                        vd:
+                            let peson={
+                                name: "duy comeback",   
+                                age:21,
+                                gender:"male",
+                                age:32,     (thuộc tính này sẽ ghi đè lên thuộc tính age cũ)
+                                sayHello:function(){
+                                    console.log(this.name); // đối tượng chấm phương thức thì this đại diện đối tượng
+                                    return 0;
+                                }
+                            }
+                            console.log(re)
+                            => name, age, gender được gọi là các thuộc tính (property)
+                            =>"duy comeback",21,male là các giá trị của thuộc tính
+                        vd2: 
+                            function Student(name,age,address){
+                                this.name=name;
+                                this.age=age;
+                                this.address=address;
+                            }
+                            let std1= new Student("Thư","26","Huế");
+                            let std2= new Student("Bảo","23","Tây Ninh");
+                            std2.id=6;
+                            console.log(std1);
+                            console.log(std2);
+
+
+                Tham Chiếu Tham Trị:
+                    -primitive (tham chiếu)     : nguyên thuỷ number, string,null,undefined,Symbol,NaN,Bolean...
+                    -peferenceType (tham trị)   : kiểu phức tạp object, array, function.   
+                    
+                        vd:
+                            let a=4;
+                            let b=a;
+                            a=8;
+                            console.log(b);
+                            let obj1={
+                                name:"Hà Nội"
+                            }
+                            let obj2=obj1;
+                            obj1.name="HCM";
+                            console.log(obj2.name);
+                            console.log("name"in obj1);
+                Các cách clone object trong JS;
+                            +loại 1: shallow clone  (clone nông=>clone ko hết) => clone cùng cấp.
+                                + C1: dùng toán tử spread,
+                            +loại 2: deep ckibe     (clone sâu)
+                                + dùng JSON.stringIfy(): lưu dưới dạng sao chép (JSON:  JavaScript Object Notation -> ký hiệu đối tượng trong JS)
+
+                            for(let i = 0; i<3; i++){   // 0, 1, 2, 3
+                                for(let j=0; j<2; j++){ // 0,1,
+                                    if(i==3){
+                                        break;
+                                    }else{
+                                        console.log(j);
+                                        continue;
+                                    }
+                                }
+                            }
+
+
+
+
+
+                            lưu trên local storage
+                            phương pháp lưu: 
+                                CÚ PHÁP:
+                                        localStorage.setItem("listUserRegisters")
+                                Cú pháp chuyển trang:
+                                    window.location.href="tên_thẻ.html"
+                                Cú pháp lấy local về:
+                                    let tên_của_nó = localStorage.getItem
+
+
+
+
+                            * Bài tập 
+                                b1: tạo 1 mảng để lưu danh sách user đã đăng kí
+                                b2: lấy thông tin người dùng nhập vào
+
+
+
+
+
+        */
+    let listUserRegisters= [];
+    function addUser(){
+        console.log("1111");
+
+    }
+
+
+
+
+     </script>
+     
+</body>
+</html>
